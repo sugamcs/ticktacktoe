@@ -30,3 +30,25 @@ const p1 = createPlayers("Player 1", "X", false)
 const p2 = createPlayers("Player 2", "0", true)
 
 // console.log(p1.marker)
+
+
+// create a function to do this
+
+const player1 = {
+  name: "player1",
+  marker: "X",
+  turn: false
+}
+
+const player2 = {
+  name: "Player2",
+  marker: "O",
+  turn: true
+}
+
+let currentPlayer;
+if (player1.turn == true) {
+  currentPlayer = player1
+ }else{ 
+  currentPlayer = player2
+}
