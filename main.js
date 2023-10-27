@@ -4,7 +4,7 @@ function gameBoard() {
     }
 const board1 = gameBoard();
 board1.cells[2] = "X"
-console.log(board1)
+// console.log(board1)
 
 
 function boardRender(){
@@ -26,29 +26,30 @@ function createPlayers(name, marker, turn){
     return playerCreated
 
 }
-const p1 = createPlayers("Player 1", "X", false)
-const p2 = createPlayers("Player 2", "0", true)
-
-// console.log(p1.marker)
+const player1 = createPlayers("Player 1", "X", false)
+const player2 = createPlayers("Player 2", "0", true)
 
 
-// create a function to do this
-
-const player1 = {
-  name: "player1",
-  marker: "X",
-  turn: false
+function findTurn(){
+  let currentPlayer;
+  if (player1.turn == true) {
+    currentPlayer = player1
+  }else{ 
+    currentPlayer = player2
+  }
+  return currentPlayer
 }
 
-const player2 = {
-  name: "Player2",
-  marker: "O",
-  turn: true
+function switchTurn() {
+   player1.turn = !player1.turn
+   player2.turn = !player2.turn
 }
 
-let currentPlayer;
-if (player1.turn == true) {
-  currentPlayer = player1
- }else{ 
-  currentPlayer = player2
-}
+console.log(player1.turn)
+console.log(player2.turn)
+switchTurn()
+console.log(player1.turn)
+console.log(player2.turn)
+switchTurn()
+console.log(player1.turn)
+console.log(player2.turn)
