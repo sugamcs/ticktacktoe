@@ -11,6 +11,7 @@ function boardRender(){
 board1.cells.forEach((cell) => {
   const cellElement = document.createElement('div')
   cellElement.textContent = cell
+  cellElement.id = "cells"
   document.body.append(cellElement)
 })
 }
@@ -39,31 +40,27 @@ let controlFlow = {
       }
       return currentPlayer
       },
+
+
       switchTurn: function() {
       player1.turn = !player1.turn
       player2.turn = !player2.turn
       },
 
-  placeMarker: function(event){
-      if (cell.textContent == "" && player1.turn == true){ //I can also do only(player1.turn)
-          if(event.target == cell){
-              let markerPlaced = event.target.textContent   
-              markerPlaced = player1.marker
-          
-          }else if(cell.textContent == "" && player2.turn == true) {
-              if(event.target == cell){
-              let markerPlaced = event.target.textContent   
-              markerPlaced = player2.marker
-          }
-      }
-      }
-      return markerPlaced
 
+      placeMarker: function (event) {
+        const currentPlayer = controlFlow.findTurn();
+        if (event.target.textContent === '' && currentPlayer.turn) {
+            event.target.textContent = currentPlayer.marker;
+            controlFlow.switchTurn();
+        }
+    },
+};
 
-
-}
-}
-
-const p1 = controlFlow.findTurn()
-console.log(p1)
-placeMarker()
+// const currentPlayer = controlFlow.findTurn();
+// console.log(currentPlayer);
+const cellElements = document.querySelectorAll('div');
+const container = document.querySelector('.container')
+cellElements.forEach((cell) => {
+    cell.addEventListener('click', controlFlow.placeMarker);
+});
