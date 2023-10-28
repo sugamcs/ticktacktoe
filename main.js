@@ -11,7 +11,7 @@ function boardRender(){
 board1.cells.forEach((cell) => {
   const cellElement = document.createElement('div')
   cellElement.textContent = cell
-  cellElement.id = "cells"
+  cellElement.id = `cells`
   document.body.append(cellElement)
 })
 }
@@ -55,12 +55,22 @@ let controlFlow = {
             controlFlow.switchTurn();
         }
     },
+      // winnerStatus: function {
+      //   if()
+      // }
 };
 
 // const currentPlayer = controlFlow.findTurn();
 // console.log(currentPlayer);
-const cellElements = document.querySelectorAll('div');
-const container = document.querySelector('.container')
+// const cellElements = document.querySelectorAll('div');
+// const container = document.querySelector('.container')
+// cellElements.forEach((cell) => {
+//   container.append(cellElements)
+//     cell.addEventListener('click', controlFlow.placeMarker);
+// });
+const cellElements = document.querySelectorAll('#cells'); // Select the cells by their ID
+const container = document.querySelector('.container');
 cellElements.forEach((cell) => {
+    container.append(cell); // Append each cell individually
     cell.addEventListener('click', controlFlow.placeMarker);
 });

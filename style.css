@@ -1,6 +1,21 @@
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: ;
+    grid-template-columns: repeat(3, 200px); /* Adjust cell width */
+    grid-template-rows: repeat(3, 200px); /* Adjust cell height */
+    gap: 4px; /* Add spacing between cells */
+}
 
-#cells {
-    width: 900px;
-    height: 100px;
-    background-color: rgb(149, 141, 141);
-} 
+.container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border: 1px solid #000; /* Add borders for separation */
+    cursor: pointer;
+}
+
+.container div:hover {
+    background-color: lightgray; /* Change cell background on hover if desired */
+}
