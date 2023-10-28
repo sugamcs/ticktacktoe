@@ -1,21 +1,23 @@
 .container {
     display: grid;
-    justify-content: center;
-    align-items: ;
-    grid-template-columns: repeat(3, 200px); /* Adjust cell width */
-    grid-template-rows: repeat(3, 200px); /* Adjust cell height */
-    gap: 4px; /* Add spacing between cells */
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: 0 auto;
+    width: 310px;
 }
 
-.container div {
+.cells {
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 24px;
-    border: 1px solid #000; /* Add borders for separation */
+    justify-content: center;
+    font-size: 48px;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    border: 2px solid #000;
     cursor: pointer;
 }
 
-.container div:hover {
-    background-color: lightgray; /* Change cell background on hover if desired */
+.cell-container:hover {
+    background-color: #e0e0e0;
 }
