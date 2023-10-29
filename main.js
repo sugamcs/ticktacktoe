@@ -1,7 +1,6 @@
 function gameBoard() {
   return { cells: [null, null, "X", null, null, null, null, null, null] };
 }
-
 const board1 = gameBoard();
 
 const container = document.querySelector('.container');
@@ -20,7 +19,6 @@ function boardRender() {
 
 boardRender();
 const cellElements = document.querySelectorAll('.cells');
-
 
 function createPlayers(name, marker, turn) {
   return { name: name, marker: marker, turn: turn };
@@ -44,10 +42,18 @@ let controlFlow = {
           controlFlow.switchTurn();
       }
   },
+  // findWinner: function (){
+  //   // I need to access each cell and its property, how can i do that
+    
+  // }
 };
-
-const checkerF = cellElements.forEach((cell) => {
-  console.log("I am a cell")
+cellElements.forEach((cell) => {
   cell.addEventListener('click', controlFlow.placeMarker);
 });
-console.log(checkerF)
+
+
+boardIndex = board1.cells
+
+let clickedArrayP1 = []
+let clickedArrayP2 = []
+console.log(currentPlayer)
