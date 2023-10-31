@@ -1,2 +1,2 @@
-tictactoe live preview:
+tictactoe live preview at:
 https://sugamcs.github.io/tictactoe/
