@@ -37,3 +37,7 @@ form {
     padding-bottom: 100px;
     gap: 10px;
 }
+
+#game-winner {
+    background-color: red;
+}
