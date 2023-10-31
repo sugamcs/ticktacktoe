@@ -101,8 +101,9 @@ function initializeGame(playerName1, playerName2) {
             return false;
         }
     };
-    
+
     cellElements.forEach((cell) => {
         cell.addEventListener('click', controlFlow.placeMarker);
     });
 }
+// finished
